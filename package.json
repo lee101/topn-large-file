@@ -18,6 +18,7 @@
   "homepage": "https://gitlab.com/lee101/top-n-large-file#README",
   "dependencies": {
     "event-stream": "3.3.4",
-    "heap": "0.2.6"
+    "heap": "0.2.6",
+    "jasmine-node": "1.14.5"
   }
 }

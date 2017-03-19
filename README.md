@@ -11,3 +11,9 @@ sorted file: reading file 1.3s total ~7s
 
 node
 sorted file: reading file: ~.4s
+
+pip install
+npm install
+
+jasmine-node .
+nosetests

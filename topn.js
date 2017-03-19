@@ -1,11 +1,15 @@
 var fs = require('fs');
-var es = require('event-stream');
-
+var Heap = require('heap');
 var readStream = fs.createReadStream('input.txt', {flags: 'r', encoding: 'utf8'});
 writeStream = fs.createWriteStream('testdata/nodeoutput.txt');
 
-function process_lines(lines) {
-    writeStream.write(lines.join('\n'));
+exports.N = +process.argv[2];
+exports.top_n = [];
+
+var heap = Heap();
+
+exports.process_lines = function(lines) {
+
 }
 var last_value = '';
 readStream.on('data', function(chunk) {
@@ -19,6 +23,9 @@ readStream.on('data', function(chunk) {
 });
 readStream.on('end', function () {
     process_lines([last_value])
+
+    writeStream.write(exports.top_n.join('\n'));
+
 });
 
 
