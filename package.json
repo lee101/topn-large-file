@@ -1,0 +1,23 @@
+{
+  "name": "top-n-large-file",
+  "version": "1.0.0",
+  "description": "top n numbers",
+  "main": "topn.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/lee101/top-n-large-file.git"
+  },
+  "author": "lee penkman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/lee101/top-n-large-file/issues"
+  },
+  "homepage": "https://gitlab.com/lee101/top-n-large-file#README",
+  "dependencies": {
+    "event-stream": "3.3.4",
+    "heap": "0.2.6"
+  }
+}
