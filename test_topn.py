@@ -37,6 +37,10 @@ class TestTopN(unittest.TestCase):
         results = list(topn.get_top_n_from_lines(1, [8, 7, 6, 5, 4, 3, 2, 1]))
         self.assertEquals(results, [8])
 
+    def test_top_n_from_lines_doesnt_alphanumeric_sort(self):
+        results = list(topn.get_top_n_from_lines(1, ['9', '10']))
+        self.assertEquals(results, [10])
+
 
 if __name__ == '__main__':
     unittest.main()
