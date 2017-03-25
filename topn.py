@@ -6,12 +6,10 @@ import fire
 def get_top_n_from_lines(N, lines):
     min_heap = [0] * N
     i = 0
-    heapified = False
     for line in lines:
         number = int(line)
-        if i == N and not heapified:
+        if i == N:
             heapq.heapify(min_heap)
-            heapified = False
 
         if i < N:
             min_heap[i] = number

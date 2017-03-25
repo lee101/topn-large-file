@@ -28,8 +28,14 @@ class TestTopN(unittest.TestCase):
         results = list(topn.get_top_n_from_lines(4, [1, 2, 3, 4, 5, 6, 7, 8]))
         self.assertEquals(results, [8, 7, 6, 5])
 
+        results = list(topn.get_top_n_from_lines(4, [8, 7, 6, 5, 4, 3, 2, 1]))
+        self.assertEquals(results, [8, 7, 6, 5])
+
         results = list(topn.get_top_n_from_lines(4, ['1', '2', '3', '4']))
         self.assertEquals(results, [4, 3, 2, 1])
+
+        results = list(topn.get_top_n_from_lines(1, [8, 7, 6, 5, 4, 3, 2, 1]))
+        self.assertEquals(results, [8])
 
 
 if __name__ == '__main__':
