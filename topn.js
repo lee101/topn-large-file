@@ -1,31 +1,31 @@
 var fs = require('fs');
 var Heap = require('heap');
 
-var heap = new Heap();
+var min_heap = new Heap();
 var heapified = false;
 
 exports.process_lines = function (lines) {
     for (var i = 0; i < lines.length; i++) {
         var number = +lines[i];
-        if (!heapified && heap.size() == exports.N) {
-            heap.heapify();
+        if (!heapified && min_heap.size() == exports.N) {
+            min_heap.heapify();
             heapified = true;
         }
 
-        if (heap.size() < exports.N) {
-            heap.nodes.push(number)
+        if (min_heap.size() < exports.N) {
+            min_heap.nodes.push(number)
         }
         else {
-            heap.pushpop(number)
+            min_heap.pushpop(number)
         }
     }
 };
 
 exports.get_top_n = function () {
     var top_n = [];
-    var heap_size = heap.size();
+    var heap_size = min_heap.size();
     for (var i = 0; i < heap_size; i++) {
-        top_n.push(heap.pop())
+        top_n.push(min_heap.pop())
     }
     return top_n.reverse()
 };
@@ -43,7 +43,6 @@ if (require.main === module) {
 
     var last_value = '';
     readStream.on('data', function (chunk) {
-        var p = chunk.length;
         var lines = chunk.split('\n');
         lines[0] = last_value + lines[0];
         last_value = lines.pop();

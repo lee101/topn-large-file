@@ -22,15 +22,14 @@ class TestTopN(unittest.TestCase):
             self.assertEquals(results[i], self.num_lines_in_file - (i + 1))
 
     def test_top_n_from_lines(self):
-        results = list(topn.get_top_n_from_lines(4, [1,2,3,4]))
-        self.assertEquals(results, [4,3,2,1])
+        results = list(topn.get_top_n_from_lines(4, [1, 2, 3, 4]))
+        self.assertEquals(results, [4, 3, 2, 1])
 
-        results = list(topn.get_top_n_from_lines(4, [1,2,3,4,5,6,7,8]))
-        self.assertEquals(results, [8,7,6,5])
+        results = list(topn.get_top_n_from_lines(4, [1, 2, 3, 4, 5, 6, 7, 8]))
+        self.assertEquals(results, [8, 7, 6, 5])
 
-        results = list(topn.get_top_n_from_lines(4, ['1','2','3','4']))
-        self.assertEquals(results, [4,3,2,1])
-
+        results = list(topn.get_top_n_from_lines(4, ['1', '2', '3', '4']))
+        self.assertEquals(results, [4, 3, 2, 1])
 
 
 if __name__ == '__main__':

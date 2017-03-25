@@ -2,6 +2,7 @@ import heapq
 
 import fire
 
+
 def get_top_n_from_lines(N, lines):
     min_heap = [0] * N
     i = 0
@@ -21,17 +22,21 @@ def get_top_n_from_lines(N, lines):
 
     return reversed([heapq.heappop(min_heap) for _ in xrange(N)])
 
+
 def get_top_n(N, input_file):
     with open(input_file, 'r') as f:
         return get_top_n_from_lines(N, f)
+
 
 def write_file(output, output_filename):
     with open(output_filename, 'wb') as f:
         f.write(output)
 
+
 def top_n(N, input_file, output_file):
     top_n = get_top_n(N, input_file)
     write_file('\n'.join([str(n) for n in top_n]), output_file)
+
 
 if __name__ == '__main__':
     fire.Fire(top_n)

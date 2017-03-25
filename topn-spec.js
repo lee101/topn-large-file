@@ -22,5 +22,14 @@ describe("top n", function () {
             '4',
         ]);
         expect(topn.get_top_n()).toEqual([4, 3, 2, 1]);
+
+        topn.N = 1;
+        topn.process_lines([
+            '1',
+            '2',
+            '3',
+            '4',
+        ]);
+        expect(topn.get_top_n()).toEqual([4]);
     });
 });
