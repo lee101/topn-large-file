@@ -7,7 +7,7 @@ import topn
 class TestTopN(unittest.TestCase):
     def generate_file(self):
         file_name = 'input.txt'
-        self.num_lines_in_file = 100000000
+        self.num_lines_in_file = 1000000
         if os.path.isfile(file_name):
             return file_name
         with open(file_name, "wb") as input_file:
